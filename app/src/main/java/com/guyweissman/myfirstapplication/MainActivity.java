@@ -1,5 +1,6 @@
 package com.guyweissman.myfirstapplication;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -10,6 +11,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
@@ -120,7 +123,36 @@ ImageView iv2;
 
             }
         }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if(id==R.id.action_login){
+            Toast.makeText(this,"You selected login", Toast.LENGTH_SHORT).show();
+        }
+        else if(R.id.action_register==id)
+        {
+            Toast.makeText(this,"You selected register", Toast.LENGTH_SHORT).show();
+        }
+        else if(R.id.action_start==id)
+        {
+            Toast.makeText(this,"You selected start", Toast.LENGTH_SHORT).show();
+        }
+        return true;
+    }
+
+    }
+
+
+
+
 
 
 
