@@ -148,7 +148,18 @@ ImageView iv2;
         return true;
     }
 
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.new_item) {
+            Intent intent = new Intent(this, newct.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onContextItemSelected(item);
+
+
     }
+}
 
 
 
