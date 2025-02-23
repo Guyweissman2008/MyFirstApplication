@@ -151,7 +151,7 @@ ImageView iv2;
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.new_item) {
-            Intent intent = new Intent(this, newct.class);
+            Intent intent = new Intent(MainActivity.this, NewActivity.class);
             startActivity(intent);
             return true;
         }

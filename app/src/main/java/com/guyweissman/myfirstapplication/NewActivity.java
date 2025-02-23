@@ -2,6 +2,7 @@ package com.guyweissman.myfirstapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -21,7 +22,7 @@ public class NewActivity extends AppCompatActivity {
             R.drawable.img_11,
             R.drawable.img_10,};
 
-     @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -29,30 +30,32 @@ public class NewActivity extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-           return insets;
+            return insets;
         });
-    }
-
-    timerImage=findViewById(R.id.timer_image);
-     new CountDownTimer(5000, 1000) {
-         int i = 0;
-        @Override
-        public void onTick(long millisUntilFinished) {
-            if (i < images.length) {
-                timerImage.setImageResource(images[i]);
-                i++;
-            }
-        }
 
 
-                public void onFinish() {
-                    Intent intent = new Intent(NewActivity.this, NextActivity.class);
-                    startActivity(intent);
-                    finish();
+        timerImage = findViewById(R.id.timer_image);
+        new CountDownTimer(5000, 1000) {
+            int i = 0;
+
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                if (i < images.length) {
+                    timerImage.setImageResource(images[i]);
+                    i++;
                 }
             }
-            .start();
-        }
+
+            @Override
+            public void onFinish() {
+                Intent intent = new Intent(NewActivity.this, NextActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }.start();
+    }
+}
 
 
 

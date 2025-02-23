@@ -21,4 +21,5 @@ public class NextActivity extends AppCompatActivity {
             return insets;
         });
     }
+
 }
