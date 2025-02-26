@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+
+    android:id="@+id/keyval" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
@@ -22,7 +23,7 @@
     <EditText
         android:id="@+id/editText1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:hint="הכנס טקסט"
         android:inputType="text" />
 
@@ -35,7 +36,7 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
         android:hint="הכנס טקסט נוסף"
         android:inputType="text" />
 
@@ -52,7 +53,7 @@
         android:text="כפתור 1"
         android:layout_gravity="center"
         android:background="#FF1493"
-    android:textColor="#FFFFFF"/>
+    android:textColor="#020202"/>
 
 
     <Space
@@ -67,6 +68,6 @@
         android:text="כפתור 2"
         android:layout_gravity="center"
         android:background="#C5237B"
-    android:textColor="#FFFFFF"/>
+    android:textColor="#EDEBEB"/>
 
 </LinearLayout>
