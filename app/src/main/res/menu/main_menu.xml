@@ -19,7 +19,12 @@
         android:id="@+id/new_item"
         android:title="New Item"
         android:orderInCategory="300"
-android:icon="@drawable/img_1"
+        android:icon="@drawable/img_1"
         />
-
+    <!-- שינוי המזהה ל dialog_menu -->
+    <item
+        android:id="@+id/dialog_menu"
+        android:title="Dialog"
+        android:orderInCategory="300"
+        />
 </menu>
