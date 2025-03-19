@@ -1,5 +1,6 @@
+
 package com.guyweissman.myfirstapplication;
-import com.guyweissman.myfirstapplication.R;
+
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Toast;
-
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,31 +42,13 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         btnSelectDate.setOnClickListener(this);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu resource (this links the menu XML)
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.dialog_menu: // אל תשכח את R.id.dialog_menu, ודא שהמזהה נכון
-                showDatePicker();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
 
     private void showDatePicker() {
         // Get the current date
-        Calendar systemCalender = Calendar.getInstance();
-        int year = systemCalender.get(Calendar.YEAR);
-        int month = systemCalender.get(Calendar.MONTH);
-        int day = systemCalender.get(Calendar.DAY_OF_MONTH);
+        Calendar systemCalendar = Calendar.getInstance();
+        int year = systemCalendar.get(Calendar.YEAR);
+        int month = systemCalendar.get(Calendar.MONTH);
+        int day = systemCalendar.get(Calendar.DAY_OF_MONTH);
 
         // Show the DatePickerDialog
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new SetDate(), year, month, day);
@@ -91,3 +73,4 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         }
     }
 }
+

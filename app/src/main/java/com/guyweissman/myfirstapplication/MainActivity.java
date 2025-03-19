@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Switch sw;
 
-SeekBar sb;
-ImageView iv;
-ImageView iv2;
+    SeekBar sb;
+    ImageView iv;
+    ImageView iv2;
 
 
     @Override
@@ -100,7 +100,7 @@ ImageView iv2;
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,secondActivity.class);
+                Intent intent = new Intent(MainActivity.this, secondActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -114,19 +114,18 @@ ImageView iv2;
     }
 
     @Override
-    public  void onCheckedChanged(CompoundButton compoundButton, boolean b){
-        if(b) {
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        if (b) {
             constraintLayout.setBackgroundColor(0xFF00BCD4);
-        }
-            else{
-                constraintLayout.setBackgroundColor(0xFFED7BA2);
+        } else {
+            constraintLayout.setBackgroundColor(0xFFED7BA2);
 
-            }
         }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -134,19 +133,17 @@ ImageView iv2;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
         int id = item.getItemId();
-        if(id==R.id.action_login){
-            Toast.makeText(this,"You selected login", Toast.LENGTH_SHORT).show();
-        }
-        else if(R.id.action_register==id)
-        {
-            Toast.makeText(this,"You selected register", Toast.LENGTH_SHORT).show();
-        }
-        else if(R.id.action_start==id)
-        {
-            Toast.makeText(this,"You selected start", Toast.LENGTH_SHORT).show();
-        }
-        else if(item.getItemId() == R.id.new_item) {
+        if (id == R.id.action_login) {
+            Toast.makeText(this, "You selected login", Toast.LENGTH_SHORT).show();
+        } else if (R.id.action_register == id) {
+            Toast.makeText(this, "You selected register", Toast.LENGTH_SHORT).show();
+        } else if (R.id.action_start == id) {
+            Toast.makeText(this, "You selected start", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId() == R.id.new_item) {
             Intent intent = new Intent(MainActivity.this, NewActivity.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.dialog_menu) {
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
             startActivity(intent);
         }
         return true;
